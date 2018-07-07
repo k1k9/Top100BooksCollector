@@ -37,6 +37,19 @@ User: {1}\n""".format(host,dbUser))
 			try:
 				self.db = pymysql.connect(host, dbUser, dbPassword, dbName)
 				print("\nSuccessful connect to " + dbName + " database on " + host + "\n")
+
+
+				# Create table if not exisit
+				query = """CREATE TABLE `pydb`.`top100lc` ( `id` INT NOT NULL AUTO_INCREMENT , `title` TEXT NOT NULL , `author` TEXT NOT NULL , 
+														`rank` TEXT NOT NULL , `readers` TEXT NOT NULL , `opinions` TEXT NOT NULL , 
+														`rate` TEXT NOT NULL , `adddate` CHAR(34) NOT NULL , 
+														PRIMARY KEY (`id`)) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_polish_ci;"""
+				# This statement mutes `Exists table` warning
+				try:
+					self.query(query)
+				except:
+					pass
+
 			except:
 				print("\n\nOPS! Can't connect to database\n\n")
 		except:
@@ -51,8 +64,7 @@ User: {1}\n""".format(host,dbUser))
 			self.db.commit()
 		except:
 			self.query = query
-			print("\nError with query: " + query)
-			print("\nRollbacking!\n")
+			print("Error with query: {0}\nRollingback!\n".format(query))
 			self.db.rollback();
 
 
