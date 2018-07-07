@@ -1,7 +1,7 @@
 # Top 100 books collector
 
 ## How it works?
-Script connect to *https://lubimyczyta.pl/ksiazki/pupularne/* and grab each data in div *book* next connect to database and send before grabbed data via **PyMySQL**
+Script connect to *http://lubimyczytac.pl/ksiazki/popularne/* and grab each data in div *book* next connect to database and send before grabbed data via **PyMySQL**
 
 ## Running
 * To run script you must have installed:
