@@ -10,8 +10,9 @@ Script connect to *http://lubimyczytac.pl/ksiazki/popularne/* and grab each data
   - Module PyMySQL *(install via pip)*
   - Have database *(or redo script and save data to file)*
 
-When you download script, you must change database login parameters in *main.py*
-
-## Problems
-**Warning:** *Data truncated for column addData*  
-**Solution:** Uncomment line 26 *db.query("ALTER TABLE `top100LC` CHANGE addDate addDate CHAR(34);")* 
+When you download script, you must change database login parameters in *main.py* like:  
+```python
+db = Database('host','database_user','database_name')
+```
+## Bugs
+404 Not found  ʕ ♥ ‿ ♥ ʔ
