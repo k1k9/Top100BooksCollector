@@ -8,8 +8,8 @@ from urllib.request import urlopen as uRequest			# collect.py
 from bs4 import BeautifulSoup as bSoup 					# collect.py
 import pymysql											# database.py
 
-from collect import grab100 as grabTopPages
-from database import Database
+from modules.collect import grab100 as grabTopPages
+from modules.database import Database
 
 
 # Grab data
@@ -23,7 +23,6 @@ db = Database('localhost','root','pyDB')
 # Send data to database
 try:
 	for book in books:
-		# Add this line when you see warning like this "Data truncated for column[..]"
 		# db.query("ALTER TABLE `top100LC` CHANGE addDate addDate CHAR(34);")
 		
 		db.query("""INSERT INTO `top100LC` (Title, Author, Rank, Readers, Opinions, Rate, addDate)
