@@ -40,7 +40,7 @@ User: {1}\n""".format(host,dbUser))
 
 
 				# Create table if not exisit
-				query = """CREATE TABLE `pydb`.`top100lc` ( `id` INT NOT NULL AUTO_INCREMENT , `title` TEXT NOT NULL , `author` TEXT NOT NULL , 
+				query = """CREATE TABLE IF NOT EXISTS `pydb`.`top100lc` ( `id` INT NOT NULL AUTO_INCREMENT , `title` TEXT NOT NULL , `author` TEXT NOT NULL , 
 														`rank` TEXT NOT NULL , `readers` TEXT NOT NULL , `opinions` TEXT NOT NULL , 
 														`rate` TEXT NOT NULL , `adddate` CHAR(34) NOT NULL , 
 														PRIMARY KEY (`id`)) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_polish_ci;"""
