@@ -4,7 +4,7 @@
 Script connect to *http://lubimyczytac.pl/ksiazki/popularne/* and grab each data in div *book* next connect to database and send before grabbed data via **PyMySQL**
 
 ## Running
-* To run script you must have installed:
+To run script you must have installed:
   - Python version >= 3
   - Module BeautifulSoup *(install via pip)*
   - Module PyMySQL *(install via pip)*
